@@ -18,8 +18,8 @@ def register(username, password):
                 print(print_colored_text('System: Username Already registered.', Fore.RED))
                 break
         if not username_exists:
-            with open('user.txt', 'a'):
-                file.write(f'{username}:{password}\n')
+            with open('user.txt', 'a') as file_:
+                file_.write(f'{username}:{password}\n')
                 print(print_colored_text('System: Username successfully registered.', Fore.GREEN))
 
 
@@ -33,7 +33,3 @@ def login(username, password):
                 return True
         print(print_colored_text('System: Username not exists.', Fore.RED))
         return False
-
-
-# register('aaa', '231')
-# login('aaa', '231')
